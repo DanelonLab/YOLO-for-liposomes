@@ -40,16 +40,14 @@ contain jpg images and txt files with bounding box labels for training and testi
 
 <img width="142" height="95" alt="image" src="https://github.com/user-attachments/assets/5561a1b5-0eca-4d3c-a953-e9b89c5b7631" />
 
+Note: YOLO default image input size is 640x640 pixels. When using large resolution images or detecting very small objects, increasing the width and height values in the .cfg file is recommended, at the cost of resources. 
+Alternatively, large images can be sectioned into smaller sized tiles. An ImageJ/FIJI macro for cropping large images into 512X512 pixels sized tiles is provided.
+
 These files can be created with labelling software, for example Label Studio (https://labelstud.io). Example of file:
 
 <img width="270" height="180" alt="image" src="https://github.com/user-attachments/assets/f012c5a2-f42e-4ee3-8187-91e3b5f17662" />
 
 The _input_ labelled data for training YOLO is the in following format: **class x y width height**
-
-#### Image
-YOLO default image input size is 640x640 pixels. When using large resolution images or detecting very small objects, increasing the width and height values in the .cfg file is recommended, at the cost of resources. 
-Alternatively, large images can be sectioned into smaller sized tiles. An ImageJ/FIJI macro for cropping large images into 512X512 pixels sized tiles is provided.
-
 -	with _class_ being the number of the class (e.g., 0, 1, 2, ...)
 -	with _x_ and _y_ being the center xy coordinate of the bounding box, normalized from 0 to 1 relative to the image size
 -	with _width_ and _height_ being the width and height of the bounding box, normalized from 0 to 1 relative to the image size
